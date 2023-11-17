@@ -1,0 +1,16 @@
+{
+  "name": "tmobis-version-checker",
+  "version": "1.0.0",
+  "description": "Проверка обновления в маркетах",
+  "cordova": {
+    "id": "tmobis-version-checker",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Nail Valiyllin",
+  "license": "ISC"
+}

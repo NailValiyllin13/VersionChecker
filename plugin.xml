@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="tmobis-version-checker" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>VersionChecker</name>
+    <js-module name="VersionChecker" src="www/VersionChecker.js">
+        <clobbers target="cordova.plugins.VersionChecker" />
+    </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="VersionChecker">
+                <param name="android-package" value="versionchecker.VersionChecker"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/VersionChecker.java" target-dir="src/com/xmartlabs/cordova/versionchecker"/>
+    </platform>
+</plugin>
