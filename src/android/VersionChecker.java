@@ -28,7 +28,7 @@ public class VersionChecker extends CordovaPlugin
             google = Jsoup.connect(args.getString(0))
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                     .get().getElementsByClass(args.getString(1)).select("span").first().ownText();
-            rustore = Jsoup.connect(args.getString(3))
+            rustore = Jsoup.connect(args.getString(2))
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                     .get().select("p[itemprop=" + args.getString(3) +"]").first().ownText();
             String versionName = BuildConfig.VERSION_NAME;
