@@ -10,6 +10,6 @@
                 <param name="android-package" value="versionchecker.VersionChecker"/>
             </feature>
         </config-file>
-        <source-file src="src/android/VersionChecker.java" target-dir="src/com/xmartlabs/cordova/versionchecker"/>
+        <source-file src="src/android/VersionChecker.java" target-dir="src/versionchecker"/>
     </platform>
 </plugin>

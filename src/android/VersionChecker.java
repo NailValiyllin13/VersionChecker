@@ -15,13 +15,15 @@ import org.apache.cordova.LOG;
 import org.jsoup.Jsoup;
 import java.io.IOException;
 
+import ru.kaska.BuildConfig;
+
 public class VersionChecker extends CordovaPlugin
 {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
         String google = "";
         String rustore= "";
-        String isupdate = false;
+        boolean isupdate = false;
         try {
             google = Jsoup.connect(args.getString(0))
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
@@ -39,7 +41,7 @@ public class VersionChecker extends CordovaPlugin
             }
             callbackContext.success();
             return isupdate;
-        } catch (IOException e) {
+        } catch (IOException | JSONException e) {
             LOG.d("ErrorVersion", String.valueOf(e));
         }
         return isupdate;
