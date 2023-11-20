@@ -32,14 +32,14 @@ public class VersionChecker extends CordovaPlugin
                     .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                     .get().select("p[itemprop=" + args.getString(3) +"]").first().ownText();
             String versionName = BuildConfig.VERSION_NAME;
-            Log.d("google", google);
+            Log.d("googleversion", google);
             Log.d("rustore", rustore);
-            if (google == rustore && versionName != google) {
-                isupdate=true;
+            if (google.equals(rustore) && !versionName.equals(google)) {
+                isupdate = true;
             } else {
-                isupdate =false;
+                isupdate = false;
             }
-            callbackContext.success();
+            callbackContext.success(String.valueOf(isupdate));
             return isupdate;
         } catch (IOException | JSONException e) {
             LOG.d("ErrorVersion", String.valueOf(e));
